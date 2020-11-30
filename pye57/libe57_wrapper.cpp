@@ -435,6 +435,7 @@ PYBIND11_MODULE(libe57, m) {
     py::class_<BlobNode> cls_BlobNode(m, "BlobNode");
     cls_BlobNode.def(py::init<e57::ImageFile, int64_t>(), "destImageFile"_a, "byteCount"_a);
     cls_BlobNode.def("byteCount", &BlobNode::byteCount);
+    cls_BlobNode.def("saveImage", &BlobNode::saveImage);
     cls_BlobNode.def("read", &BlobNode::read, "buf"_a, "start"_a, "byteCount"_a);
     cls_BlobNode.def("write", &BlobNode::write, "buf"_a, "start"_a, "byteCount"_a);
     cls_BlobNode.def(py::init<const e57::Node &>(), "n"_a);
